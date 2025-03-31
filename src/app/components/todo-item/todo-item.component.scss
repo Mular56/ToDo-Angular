@@ -1,0 +1,48 @@
+/* Загальні стилі для карток завдань */
+.todo-item {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 15px;
+  background-color: #f4f6f9;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  margin-bottom: 15px;
+  word-wrap: break-word; /* Перенос слів */
+  word-break: break-word;
+}
+
+.todo-item:hover {
+  background-color: #ffffff;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+}
+
+.todo-item .mat-checkbox {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.description {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 10px;
+  white-space: normal;
+}
+
+.actions button {
+  color: #2D2ACD;
+  font-size: 18px;
+  margin-right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.actions button:hover {
+  color: #FF6574;
+}
