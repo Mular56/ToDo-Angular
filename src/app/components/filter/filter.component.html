@@ -1,0 +1,5 @@
+<div class="filter">
+  <button mat-button [class.active]="activeFilter === 'all'" (click)="onFilterChange('all')">All</button>
+  <button mat-button [class.active]="activeFilter === 'completed'" (click)="onFilterChange('completed')">Completed</button>
+  <button mat-button [class.active]="activeFilter === 'pending'" (click)="onFilterChange('pending')">Unfinished</button>
+</div>

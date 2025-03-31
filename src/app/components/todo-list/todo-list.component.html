@@ -1,0 +1,33 @@
+<div class="todo-list">
+  <div class="left-column">
+    <app-filter (filterChanged)="onFilterChange($event)"></app-filter>
+
+    <div class="add-task">
+      <mat-form-field appearance="fill">
+        <mat-label>Task Name</mat-label>
+        <input matInput [(ngModel)]="newTaskName" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Description</mat-label>
+        <textarea matInput [(ngModel)]="newTaskDescription" rows="2"></textarea>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" (click)="onAddTask()">Add</button>
+    </div>
+  </div>
+
+  <div *ngIf="(filteredTasks$ | async) as tasks; else noTasks" class="task-list">
+    <app-todo-item
+      *ngFor="let task of tasks"
+      [task]="task"
+      (delete)="onDeleteTask($event)"
+      (toggle)="onToggleCompletion($event)"
+      (edit)="onEditTask($event)">
+    </app-todo-item>
+  </div>
+
+  <ng-template #noTasks>
+    <p class="no-tasks-message">No tasks</p>
+  </ng-template>
+</div>

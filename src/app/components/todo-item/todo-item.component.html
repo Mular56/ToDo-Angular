@@ -1,0 +1,32 @@
+<mat-card class="todo-item">
+  <mat-checkbox [checked]="task.isCompleted" (change)="onToggle()">
+    {{ task.name }}
+  </mat-checkbox>
+
+  <!-- Якщо редагування вимкнене -->
+  <div *ngIf="!isEditing">
+    <p class="description">{{ task.description }}</p>
+    <div class="actions">
+      <button mat-icon-button (click)="startEditing()">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button (click)="onDelete()">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </div>
+
+  <!-- Якщо редагування увімкнене -->
+  <div *ngIf="isEditing">
+    <mat-form-field>
+      <input matInput [(ngModel)]="editedName" placeholder="Назва завдання">
+    </mat-form-field>
+    <mat-form-field>
+      <textarea matInput [(ngModel)]="editedDescription" placeholder="Опис завдання"></textarea>
+    </mat-form-field>
+    <div class="actions">
+      <button mat-button color="primary" (click)="saveEdit()">Save</button>
+      <button mat-button (click)="cancelEdit()">Cancel</button>
+    </div>
+  </div>
+</mat-card>

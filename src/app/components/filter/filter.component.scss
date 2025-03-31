@@ -1,0 +1,10 @@
+.filter {
+  display: flex;
+  gap: 10px;
+}
+
+button.active {
+  background-color: #2D2ACD; // Колір вибраного фільтра
+  color: white;
+  font-weight: bold;
+}
